@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <root-path
+        name="app_rp"
+        path="." />
+
+    <files-path
+        name="app_fp"
+        path="." />
+
+    <cache-path
+        name="app_cp"
+        path="." />
+
+    <external-path
+        name="app_ep"
+        path="." />
+
+    <external-files-path
+        name="app_efp"
+        path="." />
+
+    <external-cache-path
+        name="app_ecp"
+        path="." />
+</paths>

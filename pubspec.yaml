@@ -1,0 +1,57 @@
+name: FPL
+description: A flutter application project with only initialization.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # iOS style icons
+  cupertino_icons: ^0.1.2
+
+  # rxdart https://github.com/ReactiveX/rxdart
+  rxdart: ^0.22.2
+  # dio
+  dio: ^2.1.6
+  # cookie_jar
+  cookie_jar: ^1.0.1
+  # package_info
+  package_info: ^0.4.0+6
+  # device_info
+  device_info: ^0.4.0+2
+  # shared_preferences
+  shared_preferences: ^0.5.3+4
+  # path_provider
+  path_provider: ^1.3.0
+  # toast
+  fluttertoast: ^3.1.1
+  # log https://github.com/Leo0618/flog
+  flog:
+    git: https://github.com/Leo0618/flog.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # use Material Icons font
+  uses-material-design: true
+
+  assets:
+    # assets-generator-begin
+    # assets/img/*
+    - assets/img/bg_splash.png
+    # assets-generator-end
+
+
