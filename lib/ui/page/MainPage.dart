@@ -2,6 +2,7 @@ import 'package:FPL/bloc/index_bloc.dart';
 import 'package:FPL/comm/c.dart';
 import 'package:FPL/data/model.dart';
 import 'package:FPL/generated/i18n.dart';
+import 'package:FPL/ui/widget/app_dialog.dart';
 import 'package:flutter/material.dart';
 
 /// function: MainPage
@@ -50,14 +51,22 @@ class MainPageState extends State<MainPage> {
                 margin: EdgeInsets.all(10),
                 color: Colors.lightBlue,
               ),
-              onTap: () => _bloc.getTestData(),
+              onTap: () {
+                showLoadingDialog(context);
+                _bloc.getTestData();
+              },
             ),
             Expanded(
               child: Center(
                 child: StreamBuilder(
                     stream: _bloc.testStream,
                     builder: (BuildContext context, AsyncSnapshot<TestModel> snapshot) {
+                      if (_isLoading) {
+                        Navigator.pop(context);
+                        _isLoading = false;
+                      }
                       try {
+                        print("===>${snapshot.data.msg}");
                         return new Text(snapshot.data.msg, style: TextStyle(color: Colors.redAccent, fontSize: 20));
                       } catch (e) {}
                       return CircularProgressIndicator();
@@ -68,5 +77,22 @@ class MainPageState extends State<MainPage> {
         ),
       ),
     );
+  }
+
+  bool _isLoading = false;
+
+  //提示 LoadingDialog
+  void showLoadingDialog(BuildContext context) {
+    _isLoading = true;
+    showDialog<Null>(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return new LoadingDialog(
+            text: '加载中...',
+            backgroundColor: Colors.white,
+            textColor: Colors.teal,
+          );
+        });
   }
 }
