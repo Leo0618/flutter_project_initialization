@@ -2,6 +2,8 @@
 
 A flutter application project with only initialization.
 
+示例项目：[贝贝找房-bbhouse 仿贝壳找房](https://github.com/Leo0618/flutter-bbhouse)
+
 ## 项目框架及依赖
 
 - **网络交互**：基于dio封装了`DioManager`,`cookie_jar`作为cookie管理方案，在`data`包下，包含：
